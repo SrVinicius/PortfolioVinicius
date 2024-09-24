@@ -1,100 +1,92 @@
-import Image from "next/image";
+"use client";  // Indica que este é um componente cliente
+
+import Head from 'next/head';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';  // Importa dinamicamente o Typewriter
+
+const Typewriter = dynamic(() => import('typewriter-effect'), { ssr: false }); // Desativar SSR para Typewriter
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="relative bg-gradient-to-br from-gray-900 via-purple-800 to-black min-h-screen text-white flex flex-col justify-center items-center">
+      <Head>
+        <title>Vinícius | Portfólio</title>
+        <meta name="description" content="Portfólio de Vinícius, Desenvolvedor" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      {/* Background xadrez no estilo do Next.js */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(128,0,128,0.1)20%,transparent 20%)] 
+                      bg-[length:75px_75px] opacity-10 pointer-events-none"></div>
+
+      <header className="absolute top-0 w-full p-5 flex justify-between items-center bg-transparent">
+        <h1 className="text-3xl font-bold text-purple-500">Vinícius</h1>
+        <nav>
+          <ul className="flex space-x-6 text-lg">
+            <li><a href="#about" className="hover:text-purple-400">Sobre</a></li>
+            <li><a href="#projects" className="hover:text-purple-400">Projetos</a></li>
+            <li><a href="#contact" className="hover:text-purple-400">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main className="flex flex-col justify-center items-center text-center px-6 relative z-10 min-h-screen">
+        {/* Efeito de Digitação */}
+        <h2 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+          <Typewriter
+            options={{
+              strings: ["Olá, eu sou Vinícius"],  // O texto a ser digitado
+              autoStart: true,
+              loop: false,  // Desativar loop para não apagar
+              cursor: "_",  // Cursor piscante
+              delay: 75,    // Velocidade de digitação
+              deleteSpeed: 0,  // Não apaga o texto
+              pauseFor: 1000000,  // Pausa longa para manter o texto final
+            }}
+          />
+        </h2>
+
+        <p className="text-xl md:text-2xl text-gray-300 mb-10">
+          Desenvolvedor Fullstack com foco em tecnologias inovadoras.
+        </p>
+
+        <a
+          href="#projects"
+          className="bg-purple-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-purple-700 transition-shadow shadow-lg shadow-purple-500/50"
+        >
+          Veja meus Projetos
+        </a>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Seção de Projetos */}
+      <section id="projects" className="w-full p-10 md:p-20 bg-gray-700 text-center">
+        <h3 className="text-3xl font-semibold mb-8 text-purple-400">Projetos</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {/* Projeto 1 */}
+          <Link href="/project1">
+            <div className="bg-gray-800 p-6 rounded-lg hover:scale-105 transition transform shadow-md shadow-purple-500/40 cursor-pointer">
+              <h4 className="text-xl font-bold mb-2">Projeto 1</h4>
+              <p className="text-sm text-gray-400">Um breve resumo sobre o projeto desenvolvido.</p>
+            </div>
+          </Link>
+          {/* Projeto 2 */}
+          <Link href="/project2">
+            <div className="bg-gray-800 p-6 rounded-lg hover:scale-105 transition transform shadow-md shadow-purple-500/40 cursor-pointer">
+              <h4 className="text-xl font-bold mb-2">Projeto 2</h4>
+              <p className="text-sm text-gray-400">Um breve resumo sobre o projeto desenvolvido.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      <footer id="contact" className="w-full p-10 md:p-20 bg-gray-900 text-center">
+        <h3 className="text-2xl font-semibold mb-6 text-purple-400">Contato</h3>
+        <p className="text-lg md:text-xl text-gray-300">
+          Entre em contato pelo e-mail{' '}
+          <a href="mailto:vinicius@example.com" className="text-purple-400 hover:underline">
+            vinicius@example.com
+          </a>
+        </p>
       </footer>
     </div>
   );
