@@ -1,10 +1,10 @@
-"use client";  // Indica que este é um componente cliente
+"use client";
 
 import Head from 'next/head';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';  // Importa dinamicamente o Typewriter
+import dynamic from 'next/dynamic';
 
-const Typewriter = dynamic(() => import('typewriter-effect'), { ssr: false }); // Desativar SSR para Typewriter
+const Typewriter = dynamic(() => import('typewriter-effect'), { ssr: false });
 
 export default function Home() {
   return (
@@ -35,13 +35,13 @@ export default function Home() {
         <h2 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
           <Typewriter
             options={{
-              strings: ["Olá, eu sou Vinícius"],  // O texto a ser digitado
+              strings: ["Olá, eu sou Vinícius"],
               autoStart: true,
-              loop: false,  // Desativar loop para não apagar
-              cursor: "_",  // Cursor piscante
-              delay: 75,    // Velocidade de digitação
-              deleteSpeed: 0,  // Não apaga o texto
-              pauseFor: 1000000,  // Pausa longa para manter o texto final
+              loop: false, 
+              cursor: "_",  
+              delay: 75,  
+              deleteSpeed: 0, 
+              pauseFor: 1000000,
             }}
           />
         </h2>
@@ -84,7 +84,7 @@ export default function Home() {
         <p className="text-lg md:text-xl text-gray-300">
           Entre em contato pelo e-mail{' '}
           <a href="mailto:vinicius@example.com" className="text-purple-400 hover:underline">
-            vinicius@example.com
+            viniciusferreirarosario5@gmail.com
           </a>
         </p>
       </footer>
