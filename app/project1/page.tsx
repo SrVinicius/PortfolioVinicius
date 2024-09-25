@@ -12,7 +12,7 @@ export default function Projeto() {
 
       {/* Header */}
       <header className="p-5 flex justify-between items-center bg-transparent">
-        <h1 className="text-3xl font-bold text-purple-500">Vinícius</h1>
+        <h1 className="text-3xl font-bold text-purple-500">vinicius.dev</h1>
         <nav>
           <ul className="flex space-x-6 text-lg">
             <li><a href="/" className="hover:text-purple-400">Início</a></li>
