@@ -1,12 +1,14 @@
-export const projects = [
-    {
-      titulo: "Projeto 1",
-      descricao: "Um breve resumo sobre o projeto desenvolvido.",
-      link: "/project1",
-    },
-    {
-      titulo: "Projeto 2",
-      descricao: "Um breve resumo sobre o projeto desenvolvido.",
-      link: "/project2",
-    },
+interface Project {
+  link?: string;
+  titulo?: string;
+  descricao?: string;
+}
+
+
+export const projects: Project[] = [
+  // {
+  //   link: "project1",
+  //   titulo: "Projeto 1",
+  //   descricao: "Descrição do Projeto 1"
+  // },
 ];
