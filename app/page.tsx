@@ -3,7 +3,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { projetos } from './data/projects';
+import { projects } from './data/projects';
 
 
 const Typewriter = dynamic(() => import('typewriter-effect'), { ssr: false });
@@ -61,7 +61,7 @@ export default function Home() {
       <section id="projects" className="w-full p-10 md:p-20 bg-gray-700 text-center">
         <h3 className="text-3xl font-semibold mb-8 text-purple-400">Projetos</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {projetos.map((project, index) => (
+        {projects.map((project, index) => (
           <Link key={index} href={project.link}>
             <div className="bg-gray-800 p-6 rounded-lg hover:scale-105 transition transform shadow-md shadow-purple-500/40 cursor-pointer">
               <h4 className="text-xl font-bold mb-2">{project.titulo}</h4>
