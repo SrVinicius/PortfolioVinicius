@@ -58,8 +58,8 @@ export default function Home() {
         </a>
       </main>
 
-      <section id="projects" className="w-full p-10 md:p-20 bg-gray-700 text-center">
-        <h3 className="text-3xl font-semibold mb-8 text-purple-400">Projetos</h3>
+      <section id="projects" className="relative bg-gradient-to-br from-gray-900 via-black-800 to-gray w-full p-10 md:p-20 text-center">
+        <h3 className="text-3xl font-semibold mb-8 text-white-400">Projetos</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, index) => (
           <Link key={index} href={project.link ?? ""}>
@@ -72,9 +72,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer id="contact" className="w-full p-10 md:p-20 bg-gray-900 text-center">
-        <h3 className="text-2xl font-semibold mb-6 text-purple-400">Contato</h3>
-        <p className="text-lg md:text-xl text-gray-300">
+      <footer id="contact" className="relative bg-gradient-to-br from-gray-900 via-purple-800 to-black w-full p-10 md:p-20 text-center">
+        <h3 className="text-2xl font-semibold mb-6 text-white-400">Contato</h3>
+        <p className="text-lg md:text-xl text-white-300">
           Entre em contato pelo e-mail{' '}
           <a href="mailto:vinicius@example.com" className="text-purple-400 hover:underline">
             viniciusferreirarosario5@gmail.com
