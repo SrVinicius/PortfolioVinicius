@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { projects } from './data/projects';
-
+import Image from 'next/image';
 
 const Typewriter = dynamic(() => import('typewriter-effect'), { ssr: false });
 
@@ -22,6 +22,7 @@ export default function Home() {
 
       <header className="absolute top-0 w-full p-5 flex justify-between items-center bg-transparent">
         <h1 className="text-3xl font-bold text-purple-500">vinicius.dev</h1>
+        {/* <Image src="/assets/header_image_transparent.png" alt="vinicius.dev" width={500} height={300} className="text-3xl font-bold text-purple-500" /> */}
         <nav>
           <ul className="flex space-x-6 text-lg">
             <li><a href="#about" className="hover:text-purple-400">Sobre</a></li>
