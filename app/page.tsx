@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { projects } from './data/projects';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 const Typewriter = dynamic(() => import('typewriter-effect'), { ssr: false });
 
